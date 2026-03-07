@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Kenyan Flag Color Palette */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 8%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 8%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 8%;
+    
+    /* Kenyan Red - Primary Brand Color */
+    --primary: 0 72% 45%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 0 72% 55%;
+    
+    /* Kenyan Green - Secondary Brand Color */
+    --secondary: 142 45% 25%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 142 45% 35%;
+    
+    /* Black accent */
+    --accent: 0 0% 8%;
+    --accent-foreground: 0 0% 100%;
+    
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 72% 45%;
+    
+    --radius: 0.75rem;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(0 72% 45%) 0%, hsl(142 45% 25%) 100%);
+    --gradient-accent: linear-gradient(90deg, hsl(0 72% 45%) 0%, hsl(0 72% 55%) 100%);
+    
+    /* Shadows */
+    --shadow-card: 0 4px 20px -2px hsl(0 0% 0% / 0.1);
+    --shadow-hover: 0 8px 30px -4px hsl(0 0% 0% / 0.15);
+  }
+
+  .dark {
+    --background: 0 0% 8%;
+    --foreground: 0 0% 98%;
+    
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 98%;
+    
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 98%;
+    
+    --primary: 0 72% 50%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 142 45% 30%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --accent: 0 0% 98%;
+    --accent-foreground: 0 0% 8%;
+    
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+    
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 0 72% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer utilities {
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .shadow-hover {
+    box-shadow: var(--shadow-hover);
+  }
+}
