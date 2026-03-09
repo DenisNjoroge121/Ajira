@@ -4,7 +4,7 @@ import { Calendar, Clock, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Events = () => {
-  const Events = [
+  const events = [
    
     {
       title: "LinkedIn Optimization Workshop",
@@ -20,12 +20,18 @@ const Events = () => {
       date: "November 26, 2025",
       location: "Virtual",
      
+      description:
+        "Welcome session for new Ajira Club members to learn about the club's mission, activities, and how to get involved.",
+      category: "Orientation",
       status: "past",
     },
     {
       title: "Digital marketing and ecommerce training",
       date: "November 27&28th , 2025",
       location: "KU BSSC room149",
+      description:
+        "Hands-on training on digital marketing strategies and ecommerce fundamentals to build your online business skills.",
+      category: "Training",
       status: "past",
     },
   ];
@@ -47,12 +53,12 @@ const Events = () => {
           <div className="flex items-center justify-between mb-8">
             <h2 className="text-3xl font-heading font-bold">Upcoming Events</h2>
             <Badge className="bg-primary text-primary-foreground">
-              {Events.length} Events
+              {events.length} Events
             </Badge>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {Events.map((event, index) => (
+            {events.map((event, index) => (
               <Card
                 key={index}
                 className="p-6 hover:shadow-hover transition-all hover:-translate-y-1 animate-fade-in border-t-4 border-t-primary"
@@ -99,7 +105,7 @@ const Events = () => {
           <h2 className="text-3xl font-heading font-bold mb-8">Past Events</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {Events.map((event, index) => (
+            {events.map((event, index) => (
               <Card
                 key={index}
                 className="p-6 hover:shadow-hover transition-all animate-fade-in"
