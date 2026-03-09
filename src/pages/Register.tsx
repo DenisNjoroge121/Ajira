@@ -74,11 +74,21 @@ const Register = () => {
       if (error) throw error;
 
       // Send email notification (don't await - let it run in background)
-      // if (data) {
-      //   sendRegistrationEmail(data).catch(err => 
-      //     console.error('Background email sending failed:', err)
-      //   );
-      // }
+      if (data) {
+        sendRegistrationEmail({
+          first_name: validatedData.first_name,
+          last_name: validatedData.last_name,
+          email: validatedData.email,
+          phone: validatedData.phone,
+          reg_number: validatedData.reg_number,
+          year_of_study: validatedData.year_of_study,
+          course: validatedData.course,
+          school: validatedData.school,
+          career_interests: validatedData.career_interests || null,
+        }).catch(err => 
+          console.error('Background email sending failed:', err)
+        );
+      }
 
       setSubmitted(true);
       
@@ -357,7 +367,7 @@ const Register = () => {
               </p>
               <div className="space-y-2 text-sm">
                 <p>
-                  <span className="font-medium">Email:</span> ajiraclub@ku.ac.ke
+                  <span className="font-medium">Email:</span> ajiraclubku@gmail.com
                 </p>
                 <p>
                   <span className="font-medium">Phone:</span> +254 712 345 678
